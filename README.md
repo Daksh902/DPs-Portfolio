@@ -1,6 +1,6 @@
 # Web Developer Portfolio - Using HTML, CSS, Bootstrap & JS
 
-> See live demo: [https://itsdp.me](https://itsdp.me)    |  Feel free to use but **credit appreciated** and a **⭐** to repo ;)
+> See live demo: [https://itsdp.me](https://dps-portfolio.onrender.com)   |  Feel free to use but **credit appreciated** and a **⭐** to repo ;)
 
 Hi there! I'm Daksh, and this is my portfolio website code built with HTML, CSS, Bootstrap, and a touch of JavaScript. Let's dive into the features:
 
