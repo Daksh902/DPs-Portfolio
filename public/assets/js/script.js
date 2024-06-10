@@ -76,8 +76,7 @@ $(document).ready(function(){
 
 
 // contact me
-  // Existing JS code and new contact form handling script
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
+document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = {
