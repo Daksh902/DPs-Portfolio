@@ -1,37 +1,12 @@
-require('dotenv').config(); // Load environment variables from .env file
-
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-// MongoDB Atlas connection string
-const MONGODB_URI = process.env.MONGODB_URI;
-
-// Connect to MongoDB Atlas
-mongoose.connect(MONGODB_URI, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true
-}).then(() => {
-    console.log('Connected to MongoDB');
-}).catch((error) => {
-    console.error('Error connecting to MongoDB Atlas', error);
-});
-
-// Define a schema and model for the contact form data
-const contactSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    subject: String,
-    message: String
-});
-
-const Contact = mongoose.model('Contact', contactSchema);
 
 // Middleware
 app.use(bodyParser.json());
@@ -51,14 +26,11 @@ const transporter = nodemailer.createTransport({
 app.post('/contact', async (req, res) => {
     try {
         const { name, email, subject, message } = req.body;
-        
+
         // Validate input
         if (!name || !email || !subject || !message) {
             return res.status(400).send('All fields are required');
         }
-
-        const newContact = new Contact({ name, email, subject, message });
-        await newContact.save();
 
         // Send email
         const mailOptions = {
