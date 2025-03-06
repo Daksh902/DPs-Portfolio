@@ -415,7 +415,7 @@ a:hover{
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-image: url(/assets/images/DBac.png);
+    background-image: url(/assets/images/DSC_9720.png); /* DBac.png */
 }
 
 @media (max-width: 576px) {
